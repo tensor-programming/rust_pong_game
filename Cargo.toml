@@ -4,7 +4,7 @@ version = "0.1.0"
 authors = ["tensor-programming <abeltensor@tensor-programming.com>"]
 
 [dependencies]
-piston = "0.35.0"
-piston2d-graphics = "0.24.0"
-pistoncore-glutin_window = "0.43.0"
-piston2d-opengl_graphics = "0.50.0"
+piston = "0.52.0"
+piston2d-graphics = "0.37.0"
+pistoncore-glutin_window = "0.67.0"
+piston2d-opengl_graphics = "0.74.0"
