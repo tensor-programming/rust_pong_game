@@ -6,8 +6,7 @@ extern crate piston;
 use std::process;
 use piston::window::WindowSettings;
 use piston::event_loop::{EventSettings, Events};
-use piston::input::{Button, Key, PressEvent, ReleaseEvent, RenderArgs, RenderEvent, UpdateArgs,
-                    UpdateEvent};
+use piston::input::{Button, Key, PressEvent, ReleaseEvent, RenderArgs, RenderEvent, UpdateArgs, UpdateEvent};
 use glutin_window::GlutinWindow;
 use opengl_graphics::{GlGraphics, OpenGL};
 
@@ -24,7 +23,6 @@ pub struct App {
     vel_x: i32,
     vel_y: i32,
 }
-
 
 impl App {
     fn render(&mut self, args: &RenderArgs) {
@@ -48,13 +46,12 @@ impl App {
             rectangle(
                 FOREGROUND,
                 right,
-                c.transform.trans(args.width as f64 - 10.0, right_pos),
+                c.transform.trans(args.window_size[0] as f64 - 10.0, right_pos),
                 gl,
             );
             rectangle(FOREGROUND, ball, c.transform.trans(ball_x, ball_y), gl);
         });
     }
-
 
     fn update(&mut self, _args: &UpdateArgs) {
         if (self.left_vel == 1 && self.left_pos < 291)
@@ -143,7 +140,7 @@ impl App {
 fn main() {
     let opengl = OpenGL::V3_2;
     let mut window: GlutinWindow = WindowSettings::new("Pong", [512, 342])
-        .opengl(opengl)
+        /* .opengl(opengl) */
         .exit_on_esc(true)
         .build()
         .unwrap();
